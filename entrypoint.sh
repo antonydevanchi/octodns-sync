@@ -45,11 +45,12 @@ echo "INFO: _config_path: ${_config_path}"
 
 _cmd="octodns-sync --config-file=\"${_config_path}\""
 
-if [ "${_doit}" = "true" ]; then
+
+if [ "${_doit}" = true ]; then
   _cmd="${_cmd} --doit"
 fi
 
-if [ "${_force}" = "true" ]; then
+if [ "${_force}" = true ]; then
   _cmd="${_cmd} --force"
 fi
 
@@ -61,7 +62,7 @@ if [ ! -z "${_target}" ]; then
   _cmd="${_cmd} --target=\"${_target}\""
 fi
 
-if [ "${_debug}" = "true" ]; then
+if [ "${_debug}" = true ]; then
   _cmd="${_cmd} --debug"
 fi
 
