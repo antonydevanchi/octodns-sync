@@ -41,29 +41,36 @@ if [ ! -r "${_config_path}" ]; then
 fi
 
 # Run octodns-sync.
-echo "INFO: _config_path: ${_config_path}"
+
+echo "INFO: --config-file=\"${_config_path}\""
 
 _cmd="octodns-sync --config-file=\"${_config_path}\""
 
-
 if [ "${_doit}" = true ]; then
+  echo "INFO: --doit"
   _cmd="${_cmd} --doit"
 fi
 
 if [ "${_force}" = true ]; then
+  echo "INFO: --force"
   _cmd="${_cmd} --force"
 fi
 
 if [ ! -z "${_source}" ]; then
+  echo "INFO: --source=\"${_source}\""
   _cmd="${_cmd} --source=\"${_source}\""
 fi
 
 if [ ! -z "${_target}" ]; then
+  echo "INFO: --target=\"${_target}\""
   _cmd="${_cmd} --target=\"${_target}\""
 fi
 
 if [ "${_debug}" = true ]; then
+  echo "INFO: --debug"
   _cmd="${_cmd} --debug"
 fi
+
+echo "CMD: ${_cmd}"
 
 script "${GITHUB_WORKSPACE}/octodns-sync.log" -e -c "${_cmd}"
