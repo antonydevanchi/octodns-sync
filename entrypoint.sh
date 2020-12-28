@@ -9,7 +9,7 @@
 echo "INFO: GITHUB_WORKSPACE is '${GITHUB_WORKSPACE}'."
 _config_path="${GITHUB_WORKSPACE%/}/${1:-public.yaml}"
 
-_doit="${2}"
+_extra_options="${2}"
 
 # Change to config directory, so relative paths will work.
 cd "$(dirname "${_config_path}")" || echo "INFO: Cannot cd to $(dirname "${_config_path}")."
@@ -38,13 +38,6 @@ fi
 
 # Run octodns-sync.
 echo "INFO: _config_path: ${_config_path}"
-if [ "${_doit}" = "--doit" ]; then
-  script "${GITHUB_WORKSPACE}/octodns-sync.log" -e -c \
-  "octodns-sync --config-file=\"${_config_path}\" \
-  --log-stream-stdout --doit"
-else
-  script "${GITHUB_WORKSPACE}/octodns-sync.log" -e -c \
-  "octodns-sync --config-file=\"${_config_path}\" \
-  --log-stream-stdout"
-fi
 
+script "${GITHUB_WORKSPACE}/octodns-sync.log" -e -c \
+  "octodns-sync --config-file=\"${_config_path}\" ${_extra_options}"
