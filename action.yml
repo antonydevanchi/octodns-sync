@@ -1,7 +1,8 @@
-# action.yml
-# https://help.github.com/en/actions/building-actions/metadata-syntax-for-github-actions
 name: 'octodns-sync_'
+
 description: 'Run github/octodns to deploy your DNS config to any cloud.'
+author: Anton Piskunov
+
 inputs:
   config-file:
     description: 'The Manager configuration file to use'
@@ -40,5 +41,5 @@ runs:
     - ${{ inputs.debug }}
 
 branding:
-  icon: 'list'
-  color: 'purple'
+  icon: 'github'
+  color: 'blue'
