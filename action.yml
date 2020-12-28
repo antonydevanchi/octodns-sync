@@ -10,18 +10,23 @@ inputs:
   doit:
     description: 'Whether to take action or just show what would change'
     required: false
+    default: false
   force:
     description: 'Acknowledge that significant changes are being made and do them'
     required: false
+    default: false
   source:
     description: 'Limit sync to zones with the specified source(s) (all sources will be synchronized for the selected zones)'
     required: false
+    default: ''
   target:
     description: 'Limit sync to the specified target(s)'
     required: false
+    default: ''
   debug:
     description: 'Increase verbosity to get details and help track down issues'
     required: false
+    default: false
 
 runs:
   using: 'docker'
