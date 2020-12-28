@@ -9,6 +9,6 @@ RUN apt-get update && \
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod 755 /entrypoint.sh
 
-RUN /entrypoint.sh
+ENTRYPOINT ["entrypoint.sh"]
 
-ENTRYPOINT ["/entrypoint.sh"]
+CMD ["config.yaml"]
