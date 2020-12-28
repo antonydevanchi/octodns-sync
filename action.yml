@@ -18,8 +18,12 @@ runs:
   using: 'docker'
   image: 'docker://ghcr.io/solvaholic/octodns-sync:latest'
   args:
-    - ${{ inputs.config_path }}
+    - ${{ inputs.config-file }}
     - ${{ inputs.doit }}
+    - ${{ inputs.force }}
+    - ${{ inputs.source }}
+    - ${{ inputs.target }}
+    - ${{ inputs.debug }}
 
 branding:
   icon: 'list'
