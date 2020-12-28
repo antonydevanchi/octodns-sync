@@ -3,16 +3,25 @@
 name: 'octodns-sync_'
 description: 'Run github/octodns to deploy your DNS config to any cloud.'
 inputs:
-  config_path:
-    description: 'Path, relative to your repository root, of the config file
-                  you would like octodns to use.'
+  config-file:
+    description: 'The Manager configuration file to use'
     required: true
-    default: 'public.yaml'
+    default: 'config.yaml'
   doit:
-    description: 'Really do it? Set "--doit" to do it; Any other string to
-                  not do it.'
+    description: 'Whether to take action or just show what would change'
     required: false
-    default: ''
+  force:
+    description: 'Acknowledge that significant changes are being made and do them'
+    required: false
+  source:
+    description: 'Limit sync to zones with the specified source(s) (all sources will be synchronized for the selected zones)'
+    required: false
+  target:
+    description: 'Limit sync to the specified target(s)'
+    required: false
+  debug:
+    description: 'Increase verbosity to get details and help track down issues'
+    required: false
 
 runs:
   using: 'docker'
