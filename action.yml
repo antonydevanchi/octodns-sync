@@ -1,7 +1,7 @@
 name: 'octodns-sync_'
 
 description: 'Run github/octodns to deploy your DNS config to any cloud.'
-author: Anton Piskunov
+author: 'Anton Piskunov'
 
 inputs:
   config-file:
@@ -43,3 +43,4 @@ runs:
 branding:
   icon: 'github'
   color: 'blue'
+  label: 'octodns-sync'
