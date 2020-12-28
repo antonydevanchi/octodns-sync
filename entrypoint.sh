@@ -74,3 +74,7 @@ fi
 echo "CMD: ${_cmd}"
 
 script "${GITHUB_WORKSPACE}/octodns-sync.log" -e -c "${_cmd}"
+
+LOG=$(cat "${GITHUB_WORKSPACE}/octodns-sync.log")
+
+echo "::set-output name=octodns-sync::$LOG"
