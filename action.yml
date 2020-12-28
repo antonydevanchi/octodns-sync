@@ -41,6 +41,5 @@ runs:
     - ${{ inputs.debug }}
 
 branding:
-  icon: 'github'
+  icon: 'upload-cloud'
   color: 'blue'
-  label: 'octodns-sync'
