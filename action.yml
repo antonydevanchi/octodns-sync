@@ -1,6 +1,6 @@
 # action.yml
 # https://help.github.com/en/actions/building-actions/metadata-syntax-for-github-actions
-name: 'octodns-sync '
+name: 'octodns-sync_'
 description: 'Run github/octodns to deploy your DNS config to any cloud.'
 inputs:
   config_path:
