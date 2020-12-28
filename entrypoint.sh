@@ -8,7 +8,7 @@
 # If GITHUB_WORKSPACE is set, prepend it to $1 for _config_path.
 echo "INFO: GITHUB_WORKSPACE is '${GITHUB_WORKSPACE}'."
 
-_config_path="${GITHUB_WORKSPACE%/}/${1:-public.yaml}"
+_config_path="${GITHUB_WORKSPACE%/}/${1:-config.yaml}"
 _do_it="${2}"
 _force="${3}"
 _source="${4}"
